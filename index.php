@@ -48,8 +48,12 @@
             </form>
 
             <li class="nav-item ml-2">
-                <button class="btn btn-outline-success my-2 my-sm-0 ml-5" data-toggle="modal" data-target="#Modal"
+                <button class="btn btn-outline-success my-2 my-sm-0 ml-md-5" data-toggle="modal" data-target="#Modal"
                     type="submit">Login</button>
+            </li>
+            <li class="nav-item ml-2">
+                <button class="btn btn-outline-success my-2 my-sm-0 ml-md-5 mr-md-5" data-toggle="modal" data-target="#Modal1"
+                    type="submit">Registrarse</button>
             </li>
         </div>
     </nav>
@@ -121,13 +125,59 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Iniciar Sesión</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form>
+                        <div class="form-group row">
+                            <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Email</label>
+
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                    placeholder="name@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" id="inputPassword">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="Modal1" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Registrarse</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <form>
+
+                        <div class="form-group row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Nombre(s)">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Apellidos">
+                            </div>
+                        </div>
+
                         <div class="form-group row">
                             <label for="exampleFormControlInput1" class="col-sm-2 col-form-label">Email</label>
 
