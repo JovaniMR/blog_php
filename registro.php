@@ -1,12 +1,14 @@
 <?php
 
- require_once 'conexion.php';
+ require_once 'includes/conexion.php';
 
 if (isset($_POST['submit'])) {
 
+
+  //Obtiene datos de formulario
    $nombre= $_POST['nombre'];
    $apellidos= $_POST['apellidos'];
-   $email= $_POST['email'];
+   $email= trim($_POST['email']);
    $pass= $_POST['password'];
     
 
@@ -36,10 +38,16 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO usuarios VALUES (null,'$nombre','$apellidos','$email','$password',CURDATE())";
         $insert = mysqli_query($conexion,$sql);
 
-        header('Location: index.php?registro=Usuario registrado correctamente');
+    
+        $_SESSION['registrado']='usuario registrado correctamente';
+        header('Location: includes/index.php');
+  
+        
 
     }else{
-        header('Location: index.php?error=Datos no validos');
+  
+        $_SESSION['Error_registro']= 'Datos no validos';
+        header('Location: includes/index.php');
     }
   
    

@@ -19,7 +19,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-   
+
 </head>
 
 <body>
@@ -33,43 +33,74 @@
     <!-- Fin header -->
 
     <!-- Menu -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">BLOG</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="row">
+        <div class="col-12">
+            <nav class="menu navbar navbar-expand-xl navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">BLOG</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categoria 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categoria 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categoria 3</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Categoria 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Categoria 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Categoria 3</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline d-flex justify-content-center my-2 my-lg-0 ">
+                        <input class="form-control font-size-sm-2 mr-sm-2" type="search" placeholder="Buscar"
+                            aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
 
-            <li class="nav-item ml-2">
-                <button class="btn btn-outline-success my-2 my-sm-0 ml-md-5" data-toggle="modal" data-target="#Modal"
-                    type="submit">Login</button>
-            </li>
-            <li class="nav-item ml-2">
-                <button class="btn btn-outline-success my-2 my-sm-0 ml-md-5 mr-md-5" data-toggle="modal"
-                    data-target="#Modal1" type="submit">Registrarse</button>
-            </li>
+                    <!-- Oculta botones al iniciar o cerrar sesion -->
+
+                    <?php if(isset($_SESSION['usuario'])):?>
+
+                    <li class="nav-item ml-2">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <?= $_SESSION['usuario']['nombre']?>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Mi cuenta</a>
+                            <a class="dropdown-item" href="#">Crear entradas</a>
+                            <a class="dropdown-item" href="#">Crear categorías</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../cerrar_sesion.php">Cerrar Sesión</a>
+                        </div>
+                    </li>
+                    </li>
+
+                    <?php else:?>
+
+                    <li class="nav-item ml-2">
+                        <button class="btn btn-outline-success mt-sm-3 mt-xl-0 my-2 my-sm-0 ml-md-5" data-toggle="modal"
+                            data-target="#Modal" type="submit">Login</button>
+                    </li>
+
+                    <li class="nav-item ml-2">
+                        <button class="btn btn-outline-success  mt-sm-3 mt-xl-0 my-2 my-sm-0 ml-md-5 mr-md-5"
+                            data-toggle="modal" data-target="#Modal1" type="submit">Registrarse</button>
+                    </li>
+                    <?php endif?>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </div>
     <!-- Fin menu -->
 
     <!-- Main -->
