@@ -12,7 +12,7 @@ require_once 'cabecera.php' ;?>
     <form action="../guardar_categoria.php" method="POST">
         <div class="form-group">
             <label for="formGroupExampleInput">Añade una nueva categoría</label>
-            <input type="text" name="categoria" class="form-control" id="formGroupExampleInput">
+            <input type="text" name="categoria" class="form-control" required="required" id="formGroupExampleInput">
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
 

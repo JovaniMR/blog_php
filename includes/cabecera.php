@@ -90,7 +90,7 @@
                         </a>
                         <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Mi cuenta</a>
-                            <a class="dropdown-item" href="#">Crear entradas</a>
+                            <a class="dropdown-item" href="crear_entradas.php">Crear entradas</a>
                             <a class="dropdown-item" href="crear_categorias.php">Crear categorías</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../cerrar_sesion.php">Cerrar Sesión</a>

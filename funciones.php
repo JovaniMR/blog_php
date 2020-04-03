@@ -2,7 +2,7 @@
 
 function consultarCategorias ($conexion){
 
-    $sql = "SELECT * FROM categorias ORDER BY id ASC";
+    $sql = "SELECT * FROM categorias ORDER BY id ASC LIMIT 7";
 
     $consulta = mysqli_query($conexion,$sql); 
     $result = array();

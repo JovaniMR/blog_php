@@ -16,11 +16,11 @@ if (isset($_POST['submit'])) {
 
     $flag=true;
 
-    if (!preg_match("/[a-zA-Z ]/",$nombre)) {
+    if (preg_match("/[0-9]/",$nombre)) {
         $flag=false;
     }
     
-    if (!preg_match("/[a-zA-Z ]/",$apellidos)) {
+    if (!preg_match("/[0-9]/",$apellidos)) {
         $flag=false;
     }
 
