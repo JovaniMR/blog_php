@@ -128,7 +128,6 @@
                     <div class="alert alert-warning " role="alert">
 
                         <?= $_SESSION['Error_registro'];?>
-                        <?php session_destroy();?>
 
                     </div>
 
@@ -136,11 +135,12 @@
 
                     <div class="alert alert-success " style="margin: 0 auto;" role="alert">
                         <?= $_SESSION['registrado'];?>
-                        <?php session_destroy();?>
+
                     </div>
 
                     <?php endif ?>
 
+                    <?php session_destroy();?>
                     <?php endif?>
 
 
@@ -154,7 +154,6 @@
     </div>
 
 </div>
-
 
 
 

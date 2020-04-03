@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Video Juegos</title>
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -36,7 +36,7 @@
     <div class="row">
         <div class="col-12">
             <nav class="menu navbar navbar-expand-xl navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">BLOG</a>
+                <a class="navbar-brand" href="index.php">BLOG</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -46,17 +46,30 @@
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
                         </li>
+                        <!-- Listar categorias -->
+
+
+                        <?php 
+                    
+                        $categorias = consultarCategorias($conexion);
+                        if(!empty($categorias)) :
+                            while($categoria = mysqli_fetch_assoc($categorias)):
+                         ?>
+
+
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Categoria 1</a>
+                            <a class="nav-link" href="categoria.php?id= <?=$categoria['id']?>">
+                                <?=$categoria['nombre']?> </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Categoria 2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Categoria 3</a>
-                        </li>
+
+                        <?php 
+                            endwhile;
+                        endif;
+                        ?>
+                        <!-- Fin listado de las categorias -->
+
                     </ul>
                     <form class="form-inline d-flex justify-content-center my-2 my-lg-0 ">
                         <input class="form-control font-size-sm-2 mr-sm-2" type="search" placeholder="Buscar"
@@ -70,15 +83,15 @@
 
                     <li class="nav-item ml-2">
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown mr-xl-5 ml-xl-5">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <?= $_SESSION['usuario']['nombre']?>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="#">Mi cuenta</a>
                             <a class="dropdown-item" href="#">Crear entradas</a>
-                            <a class="dropdown-item" href="#">Crear categorías</a>
+                            <a class="dropdown-item" href="crear_categorias.php">Crear categorías</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../cerrar_sesion.php">Cerrar Sesión</a>
                         </div>
@@ -103,5 +116,4 @@
     </div>
     <!-- Fin menu -->
 
-    <!-- Main -->
-    <section class="main">
+ 
