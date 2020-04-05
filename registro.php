@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
         $flag=false;
     }
     
-    if (!preg_match("/[0-9]/",$apellidos)) {
+    if (preg_match("/[0-9]/",$apellidos)) {
         $flag=false;
     }
 

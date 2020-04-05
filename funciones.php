@@ -32,4 +32,32 @@ function consultarEntradas($conexion){
     return $result;
 }
 
+function consultarUsuario($conexion,$id){
+    
+    $sql = "SELECT nombre, apellidos, email FROM usuarios WHERE id=$id";    
+    $consulta= mysqli_query($conexion,$sql);
+
+    $usuario=array();
+
+    if (mysqli_num_rows($consulta)==1) {
+        $usuario = $consulta;
+    }
+
+    return $usuario;
+}
+
+function consultarUsuarios($conexion,$email,$id){
+    
+    $sql = "SELECT email FROM usuarios WHERE email='$email' AND id != $id ";    
+    $consulta= mysqli_query($conexion,$sql);
+
+    $flag=true;
+
+    if (mysqli_num_rows($consulta)!=0) {
+        $flag=false;
+    }
+
+    return $flag;
+}
+
 ?>

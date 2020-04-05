@@ -7,7 +7,7 @@ require_once 'cabecera.php' ;?>
 
 <div class="container mt-5">
 
-    <h2>CREAR ENTRADAS</h2>
+    <h2 class="text-center">CREAR ENTRADAS</h2>
 
     <form class="mt-5" action="../guardar_entradas.php" method="POST">
         <div class="form-group col-4">
@@ -35,14 +35,12 @@ require_once 'cabecera.php' ;?>
         <!-- Fin categorias en select -->
 
         <div class="form-group">
-            <label for="formGroupExampleInput">Título</label>
-            <input type="text" name="titulo" class="form-control" required="required" id="formGroupExampleInput">
+            <label for="titulo">Título</label>
+            <input type="text" name="titulo" class="form-control" required="required" id="titulo">
 
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Descripción</label>
-                <textarea class="form-control" name="descripcion" required="required" id="exampleFormControlTextarea1"
-                    rows="3"></textarea>
-            </div>
+            <label for="descripcion">Descripción</label>
+            <textarea class="form-control" name="descripcion" required="required" id="descripcion" rows="3"></textarea>
+
         </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
         <!-- Muestra errores -->
