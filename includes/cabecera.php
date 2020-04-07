@@ -71,10 +71,10 @@
                         <!-- Fin listado de las categorias -->
 
                     </ul>
-                    <form class="form-inline d-flex justify-content-center my-2 my-lg-0 ">
-                        <input class="form-control font-size-sm-2 mr-sm-2" type="search" placeholder="Buscar"
+                    <form class="form-inline d-flex justify-content-center my-2 my-lg-0" action="buscar.php" method="GET">
+                        <input class="form-control font-size-sm-2 mr-sm-2" name="buscar" type="search" placeholder="Buscar"
                             aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Buscar</button>
                     </form>
 
                     <!-- Oculta botones al iniciar o cerrar sesion -->

@@ -27,5 +27,9 @@
 </div>
 
 
+<div class="entradas d-flex justify-content-center">
+    <a type="submit" class="btn btn-primary mt-5 " href="total_entradas.php">Ver todas las entradas</a>
+</div>
+
 
 <?php require_once 'footer.php';

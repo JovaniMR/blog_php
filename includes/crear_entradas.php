@@ -47,7 +47,7 @@ require_once 'cabecera.php' ;?>
 
         <?php if(isset($_SESSION['error_entrada'])) :?>
 
-        <div class="alert alert-warning" role="alert">
+        <div class="alert alert-warning mt-3" role="alert">
             <?= $_SESSION['error_entrada']?>
 
         </div>
@@ -58,7 +58,7 @@ require_once 'cabecera.php' ;?>
 
         <?php if(isset($_SESSION['entrada'])) :?>
 
-        <div class="alert alert-success mt-" role="alert">
+        <div class="alert alert-success mt-3" role="alert">
             <?= $_SESSION['entrada']?>
         </div>
 
